@@ -3,6 +3,7 @@ package com.example.SpringProblems;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/user")
 public class Apis {
     @GetMapping("/hello")// get the response from server
     public String hello(){
@@ -22,6 +23,11 @@ public class Apis {
     public String postname(@RequestBody userDTO user){
         return "Hello "+user.getFirstname()+" " +""+user.getLastname()+" from Bridge Labz";
     }
+    @PutMapping("/put/{firstname}")
+    public String putname(@PathVariable String firstname,@RequestParam(name="lastname")String lastname){
+        return "Hello "+firstname+" "+lastname+" from BridgeLabz";
+    }
+
 
 
 
