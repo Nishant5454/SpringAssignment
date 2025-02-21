@@ -20,7 +20,7 @@ public class Apis {
     }
     @PostMapping("/create")
     public String postname(@RequestBody userDTO user){
-        return "first name is "+user.getFirstname()+" " +"last name is "+user.getLastname();
+        return "Hello "+user.getFirstname()+" " +""+user.getLastname()+" from Bridge Labz";
     }
 
 
