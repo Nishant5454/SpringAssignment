@@ -1,9 +1,6 @@
 package com.example.SpringProblems;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class Apis {
@@ -17,10 +14,15 @@ public class Apis {
             return "Hello" + name;
         }
     }
-    @GetMapping("/hello/{params}")
+    @GetMapping("/hello/{params}")// Get the Get Response according to the params
     public String getUserbyparams(@PathVariable String params){
         return "Hello "+params;
     }
+    @PostMapping("/create")
+    public String postname(@RequestBody userDTO user){
+        return "first name is "+user.getFirstname()+" " +"last name is "+user.getLastname();
+    }
+
 
 
 
